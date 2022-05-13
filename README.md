@@ -1,6 +1,6 @@
 Convert docker-compose.yml to helm chart
 ```
-kompose covert -c
+kompose convert -c
 ```
 Install from folder:
 ```
