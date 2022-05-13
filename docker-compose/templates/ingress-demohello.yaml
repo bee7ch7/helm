@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: "{{.Values.working_where.env}}-demohello-ingress"
+  annotations:
+spec:
+  rules:
+  - host: cont2.meldm.ml
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: "{{.Values.working_where.env}}-demohello"
+            port:
+              number: 80

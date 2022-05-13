@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: guthubactions-ingress
+  annotations:
+spec:
+  rules:
+  - host: cont1.meldm.ml
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: guthubactions
+            port:
+              number: 80
